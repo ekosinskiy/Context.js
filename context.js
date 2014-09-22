@@ -5,7 +5,7 @@
  */
 
 var context = context || (function () {
-
+    var clickedCurrentTarget;
 	var options = {
 		fadeSpeed: 100,
 		filter: function ($obj) {
@@ -41,6 +41,10 @@ var context = context || (function () {
 		});
 
 	}
+
+    function getClickedCurrentTarget() {
+        return clickedCurrentTarget;
+    }
 
 	function updateOptions(opts){
 		options = $.extend({}, options, opts);
@@ -98,6 +102,8 @@ var context = context || (function () {
 
 
 		$(document).on('contextmenu', selector, function (e) {
+            var $dd;
+            clickedCurrentTarget = e.currentTarget;
 			e.preventDefault();
 			e.stopPropagation();
 
@@ -135,6 +141,7 @@ var context = context || (function () {
 		init: initialize,
 		settings: updateOptions,
 		attach: addContext,
-		destroy: destroyContext
+		destroy: destroyContext,
+        getClickedCurrentTarget: getClickedCurrentTarget
 	};
 })();
