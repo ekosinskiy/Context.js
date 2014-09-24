@@ -13,6 +13,8 @@ The first is to be used <i>with</i> <a href="http://twitter.github.com/bootstrap
 ## Features
 
 <ul>
+    <li>Optimization render menu</li>
+    <li>Added two events: <b>open</b> and <b>hide</b> which processing when menu open and close</li>
     <li>Added method to get a context which produced a click <b>context.getClickedCurrentTarget()</b></li>
 	<li>Linted: Valid JS</li>
 	<li>Can be used with or without Twitters Bootstrap.css</li>
